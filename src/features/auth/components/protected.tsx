@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
 import { useAuth } from "..";
-import { LoadingOverlay } from "@/components/ui";
 import { Navigate } from "react-router-dom";
+import { LoadingOverlay } from "@mantine/core";
 
 export const Protected = ({ children }: { children: ReactNode }) => {
   const { user, isLoadingUser } = useAuth();

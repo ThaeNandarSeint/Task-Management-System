@@ -16,8 +16,6 @@ export * from "./text-area";
 export * from "./export-button";
 export * from "./date-picker-input";
 export * from "./checkbox";
-export * from "./loader";
-export * from "./loading-overlay";
 export * from "./text";
 export * from "./select";
 export * from "./user-avatar";
