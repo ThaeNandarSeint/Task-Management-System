@@ -2,7 +2,7 @@ import { User } from "@/features/user";
 
 export type AuthContext = {
   user: User | null;
-  onLogin: (value: { user: User }) => void;
+  onLogin: (value: { user: User; token: string }) => void;
   onLogout: () => void;
   isLoadingUser: boolean;
 };

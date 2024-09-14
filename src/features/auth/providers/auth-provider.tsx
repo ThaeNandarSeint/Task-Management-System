@@ -50,8 +50,8 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
   const queryClient = useQueryClient();
 
-  const onLogin: AuthContext["onLogin"] = useCallback(({ user }) => {
-    localStorage.setItem("accessToken", user.currentToken);
+  const onLogin: AuthContext["onLogin"] = useCallback(({ user, token }) => {
+    localStorage.setItem("accessToken", token);
     dispatch({ type: "LOGGED_IN", payload: user });
   }, []);
 

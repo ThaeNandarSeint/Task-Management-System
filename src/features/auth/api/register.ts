@@ -4,11 +4,10 @@ import { User } from "@/features/user";
 import { useMutation } from "@tanstack/react-query";
 
 export const register = async (data: RegisterDto) => {
-  const { userAgent: deviceId, platform: deviceOS } = navigator;
   return api
     .post<{
       user: User;
-    }>("/auth/customers/register", { ...data, deviceId, deviceOS })
+    }>("/auth/register", data)
     .then((res) => res.data);
 };
 

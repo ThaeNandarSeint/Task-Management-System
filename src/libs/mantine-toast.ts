@@ -1,39 +1,17 @@
-import { ReactNode } from "react";
-import { notifications } from "@mantine/notifications";
-import { NotificationProps } from "@mantine/core";
-
-type Options = {
-  title?: string;
-  message: ReactNode;
-  className?: string;
-  loading?: boolean;
-  color?: string;
-  onOpen?: () => void;
-  onClose?: () => void;
-  autoCloseAfter?: number;
-  withCloseButton?: boolean;
-  id?: string;
-  icon?: NotificationProps["icon"];
-  position?: string;
-};
-
-const defaultOpts: Partial<Options> = {
-  withCloseButton: true,
-  position: "top",
-};
+import { NotificationData, notifications } from "@mantine/notifications";
 
 export const toast = {
-  show(opt: Options) {
-    notifications.show({ ...opt, ...defaultOpts });
+  show(opts: NotificationData) {
+    notifications.show(opts);
   },
-  success(opt: Options) {
+  success(opt: NotificationData) {
     this.show({
       color: "green",
       ...opt,
     });
   },
 
-  error(opt: Options) {
+  error(opt: NotificationData) {
     this.show({
       color: "red",
       ...opt,

@@ -1,7 +1,7 @@
 import { z } from "zod";
 
 export const loginSchema = z.object({
-  user: z
+  email: z
     .string({ required_error: "Email is required" })
     .email("Invalid email"),
   password: z
@@ -11,13 +11,3 @@ export const loginSchema = z.object({
 });
 
 export type LoginDto = z.infer<typeof loginSchema>;
-
-export type GoogleLoginDto = {
-  accessToken: string;
-};
-
-export type AppleLoginDto = {
-  authorizationCode: string;
-  displayName?: string;
-  email?: string;
-};

@@ -5,6 +5,7 @@ export type Task = {
 };
 
 export type GetTasksQuery = {
+  page?: number;
   skip?: number;
   limit?: number;
   search?: string;

@@ -1,5 +1,5 @@
 import { IoMdAdd } from "react-icons/io";
-import { TaskForm, TaskItem } from "..";
+import { TaskCard, TaskForm } from "..";
 import { useDisclosure } from "@mantine/hooks";
 
 export const CreateTask = () => {
@@ -7,10 +7,10 @@ export const CreateTask = () => {
 
   return (
     <>
-      <TaskItem className="justify-center gap-1 cursor-pointer" onClick={open}>
+      <TaskCard className="justify-center gap-1 cursor-pointer" onClick={open}>
         <IoMdAdd className="text-xl" />
         Add Task
-      </TaskItem>
+      </TaskCard>
       <TaskForm isOpen={isOpen} close={close} />
     </>
   );

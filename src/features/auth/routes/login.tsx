@@ -33,8 +33,8 @@ export const Login = () => {
 
   const onSubmit = handleSubmit((data) => {
     mutate(data, {
-      onSuccess: (data) => {
-        onLogin(data);
+      onSuccess: ({ payload }) => {
+        onLogin(payload);
         toast.success({
           message: "Login successful!",
         });
@@ -56,8 +56,8 @@ export const Login = () => {
         <TextInput
           label="Email"
           type="email"
-          {...register("user")}
-          error={errors.user?.message}
+          {...register("email")}
+          error={errors.email?.message}
         />
         <PasswordInput
           label="Password"

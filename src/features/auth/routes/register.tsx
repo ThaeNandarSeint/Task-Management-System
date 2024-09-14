@@ -49,20 +49,15 @@ export const Register = () => {
       />
       <div className="flex flex-col gap-5">
         <TextInput
-          label="Phone Number"
-          {...register("phoneNumber")}
-          error={errors.phoneNumber?.message}
-        />
-        <TextInput
           label="Name"
-          {...register("displayName")}
-          error={errors.displayName?.message}
+          {...register("name")}
+          error={errors.name?.message}
         />
         <TextInput
           label="Email"
           type="email"
-          {...register("user")}
-          error={errors.user?.message}
+          {...register("email")}
+          error={errors.email?.message}
         />
         <PasswordInput
           label="Password"

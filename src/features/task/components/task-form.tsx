@@ -42,6 +42,8 @@ export const TaskForm = ({
             queryClient.invalidateQueries({
               queryKey: ["tasks"],
             });
+            close();
+            reset();
           },
         },
       );
@@ -54,15 +56,15 @@ export const TaskForm = ({
           queryClient.invalidateQueries({
             queryKey: ["tasks"],
           });
+          close();
+          reset();
         },
       });
     }
   });
 
   useEffect(() => {
-    if (oldData) {
-      reset(oldData);
-    }
+    reset(oldData);
   }, [oldData, reset]);
 
   return (
