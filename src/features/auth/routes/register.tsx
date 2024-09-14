@@ -28,8 +28,8 @@ export const Register = () => {
 
   const onSubmit = handleSubmit((data) => {
     mutate(data, {
-      onSuccess: (data) => {
-        onLogin(data);
+      onSuccess: ({ payload }) => {
+        onLogin(payload);
         toast.success({
           message: "Register successful!",
         });

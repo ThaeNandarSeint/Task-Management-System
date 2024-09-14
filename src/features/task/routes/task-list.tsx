@@ -1,4 +1,4 @@
-import { Button } from "@/components";
+import { Button, Text, UserAvatar } from "@/components";
 import { CreateTask, TaskItem, useGetTasks } from "..";
 import { Loader } from "@mantine/core";
 import { useAuth } from "@/features/auth";
@@ -29,12 +29,24 @@ export const TaskList = () => {
       ),
     );
 
-  const { onLogout } = useAuth();
+  const { user, onLogout } = useAuth();
 
   return (
     <div className="flex flex-col items-center py-9">
       <div className="flex flex-col gap-3 w-2/3">
-        <div className="flex justify-end">
+        <div className="flex justify-between items-center">
+          <div className="flex items-center gap-2">
+            <UserAvatar
+              src="/images/avatar.jpg"
+              className="w-12 h-12 border-solid rounded-full border-2 border-gray-500 shadow-md"
+            />
+            <div>
+              <Text className="text-primary-500 font-medium">{user?.name}</Text>
+              <Text className="text-secondary-500 font-medium">
+                {user?.email}
+              </Text>
+            </div>
+          </div>
           <Button onClick={onLogout}>Logout</Button>
         </div>
         <CreateTask />

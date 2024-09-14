@@ -5,9 +5,7 @@ import { useMutation } from "@tanstack/react-query";
 
 export const register = async (data: RegisterDto) => {
   return api
-    .post<{
-      user: User;
-    }>("/auth/register", data)
+    .post<{ payload: { user: User; token: string } }>("/auth/register", data)
     .then((res) => res.data);
 };
 
