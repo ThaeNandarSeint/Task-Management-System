@@ -63,9 +63,9 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
 
   useEffect(() => {
     getCurrentUser()
-      .then((user) => {
-        dispatch({ type: "LOADED_USER", payload: user });
-        localStorage.setItem("user", JSON.stringify(user));
+      .then(({ payload }) => {
+        dispatch({ type: "LOADED_USER", payload });
+        localStorage.setItem("user", JSON.stringify(payload));
       })
       .catch(() => dispatch({ type: "UNSET_USER" }));
   }, []);

@@ -1,6 +1,12 @@
 import { Button, Modal, TextInput } from "@/components";
 import { useForm } from "react-hook-form";
-import { Task, TaskDto, taskSchema, useCreateTask, useUpdateTask } from "..";
+import {
+  Task,
+  TaskDto,
+  baseTaskSchema,
+  useCreateTask,
+  useUpdateTask,
+} from "..";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useQueryClient } from "@tanstack/react-query";
 import { toast } from "@/libs/mantine-toast";
@@ -21,7 +27,7 @@ export const TaskForm = ({
     handleSubmit,
     reset,
   } = useForm<TaskDto>({
-    resolver: zodResolver(taskSchema),
+    resolver: zodResolver(baseTaskSchema),
     mode: "all",
   });
 
